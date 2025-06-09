@@ -1,5 +1,4 @@
 import psycopg2
-import hashlib
 import os
 from pathlib import Path
 
@@ -15,9 +14,6 @@ def load_env():
 load_env()
 DATABASE_URL = os.getenv('DATABASE_URL', "postgresql://admin:password@localhost:5432/factored_employees") # only dev mode
 
-def simple_hash(password):
-    return hashlib.sha256(password.encode()).hexdigest()
-
 def seed_database():
     print("🌱 Starting database seeding...")
     
@@ -28,9 +24,9 @@ def seed_database():
         print("👥 Creating users...")
         
         users = [
-            ("Juan Pérez", "Senior Developer", "juan.perez@example.com", simple_hash("password123"), "https://api.dicebear.com/7.x/avataaars/svg?seed=juan"),
-            ("María García", "Data Scientist", "maria.garcia@example.com", simple_hash("password456"), "https://api.dicebear.com/7.x/avataaars/svg?seed=maria"),
-            ("Carlos López", "DevOps Engineer", "carlos.lopez@example.com", simple_hash("password789"), "https://api.dicebear.com/7.x/avataaars/svg?seed=carlos")
+            ("Juan Pérez", "Senior Developer", "juan.perez@example.com", "password123", "https://api.dicebear.com/7.x/avataaars/svg?seed=juan"),
+            ("María García", "Data Scientist", "maria.garcia@example.com", "password456", "https://api.dicebear.com/7.x/avataaars/svg?seed=maria"),
+            ("Carlos López", "DevOps Engineer", "carlos.lopez@example.com", "password789", "https://api.dicebear.com/7.x/avataaars/svg?seed=carlos")
         ]
         
         for name, position, email, password, avatar in users:
