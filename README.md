@@ -1,4 +1,4 @@
-# Profile Management Application
+# Profile Application
 
 A full-stack profile management application built with React frontend, FastAPI backend, and PostgreSQL database, all running in Docker containers.
 
