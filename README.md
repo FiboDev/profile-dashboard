@@ -148,15 +148,3 @@ VITE_ENVIRONMENT=development
 DATABASE_URL=postgresql://profile_user:profile_password@postgres_profile_app:5432/profile_db
 SECRET_KEY=your-secret-key-here
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
